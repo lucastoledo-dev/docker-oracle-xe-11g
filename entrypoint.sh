@@ -27,6 +27,8 @@ create user $DUMP_NAME identified by $DUMP_NAME default tablespace $DUMP_NAME;
 alter user $DUMP_NAME quota unlimited on $DUMP_NAME;
 alter user $DUMP_NAME default role all;
 grant connect, resource to $DUMP_NAME;
+
+ALTER DATABASE DATAFILE '/u01/app/oracle/oradata/XE/system.dbf' autoextend on next 100M maxsize unlimited;
 exit;
 EOL
 
